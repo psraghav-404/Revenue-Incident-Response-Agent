@@ -64,6 +64,7 @@ function App() {
   const [isThinking, setIsThinking] = useState(false);
   const [currentSteps, setCurrentSteps] = useState([]);
   const [showThinking, setShowThinking] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
 
   const fetchAll = useCallback(async () => {
     try {
