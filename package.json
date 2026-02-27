@@ -1,0 +1,39 @@
+{
+  "name": "revenueguard-ai",
+  "version": "1.0.0",
+  "description": "Autonomous AI agent for detecting, investigating, and resolving revenue leakage in SaaS platforms — powered by Elasticsearch.",
+  "main": "revenueguard-server.js",
+  "scripts": {
+    "start": "node revenueguard-server.js",
+    "dev": "node revenueguard-server.js",
+    "generate-data": "node generate_data.js",
+    "agent": "node agent.js",
+    "dashboard": "cd dashboard-react && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "elasticsearch",
+    "agent",
+    "revenue-leakage",
+    "anomaly-detection",
+    "fintech",
+    "ai-agent",
+    "hackathon"
+  ],
+  "author": "<Your Name>",
+  "license": "MIT",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psraghav-404/revenueguard-ai.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.12.0",
+    "axios": "^1.13.5",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

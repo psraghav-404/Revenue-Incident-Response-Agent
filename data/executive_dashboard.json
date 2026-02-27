@@ -1,0 +1,210 @@
+{
+  "summary": {
+    "total_leak": 1630,
+    "mrr_risk_pct": "1.8",
+    "confidence": 89,
+    "verdict": "Multi-causal revenue leak confirmed: Billing deployment regression coupled with pricing version mismatch."
+  },
+  "timeline": [
+    {
+      "date": "2026-02-01",
+      "expected": 6992,
+      "actual": 6992,
+      "leak": 0
+    },
+    {
+      "date": "2026-02-02",
+      "expected": 5746,
+      "actual": 5746,
+      "leak": 0
+    },
+    {
+      "date": "2026-02-03",
+      "expected": 8448,
+      "actual": 8448,
+      "leak": 0
+    },
+    {
+      "date": "2026-02-04",
+      "expected": 3990,
+      "actual": 3990,
+      "leak": 0
+    },
+    {
+      "date": "2026-02-05",
+      "expected": 7693,
+      "actual": 7693,
+      "leak": 0
+    },
+    {
+      "date": "2026-02-06",
+      "expected": 5101,
+      "actual": 5101,
+      "leak": 0
+    },
+    {
+      "date": "2026-02-07",
+      "expected": 6630,
+      "actual": 6630,
+      "leak": 0
+    },
+    {
+      "date": "2026-02-08",
+      "expected": 5243,
+      "actual": 5143,
+      "leak": 100
+    },
+    {
+      "date": "2026-02-09",
+      "expected": 7220,
+      "actual": 7020,
+      "leak": 200
+    },
+    {
+      "date": "2026-02-10",
+      "expected": 6876,
+      "actual": 6726,
+      "leak": 150
+    },
+    {
+      "date": "2026-02-11",
+      "expected": 5089,
+      "actual": 4879,
+      "leak": 210
+    },
+    {
+      "date": "2026-02-12",
+      "expected": 8024,
+      "actual": 7684,
+      "leak": 340
+    },
+    {
+      "date": "2026-02-13",
+      "expected": 4506,
+      "actual": 4256,
+      "leak": 250
+    },
+    {
+      "date": "2026-02-14",
+      "expected": 7619,
+      "actual": 7239,
+      "leak": 380
+    }
+  ],
+  "anomalies": [
+    {
+      "date": "2026-01-31",
+      "failure_rate": 0,
+      "anomaly_score": 0
+    },
+    {
+      "date": "2026-02-01",
+      "failure_rate": 0,
+      "anomaly_score": 0
+    },
+    {
+      "date": "2026-02-02",
+      "failure_rate": 0,
+      "anomaly_score": 0
+    },
+    {
+      "date": "2026-02-03",
+      "failure_rate": 3.389830508474576,
+      "anomaly_score": 0
+    },
+    {
+      "date": "2026-02-04",
+      "failure_rate": 4.444444444444445,
+      "anomaly_score": 5.244444444444445
+    },
+    {
+      "date": "2026-02-05",
+      "failure_rate": 0,
+      "anomaly_score": 0
+    },
+    {
+      "date": "2026-02-06",
+      "failure_rate": 1.8518518518518516,
+      "anomaly_score": 1.1818910256410255
+    },
+    {
+      "date": "2026-02-07",
+      "failure_rate": 1.9230769230769231,
+      "anomaly_score": 0.9926965451916847
+    },
+    {
+      "date": "2026-02-08",
+      "failure_rate": 10,
+      "anomaly_score": 4.30692760435081
+    },
+    {
+      "date": "2026-02-09",
+      "failure_rate": 10.204081632653061,
+      "anomaly_score": 2.80033827448102
+    },
+    {
+      "date": "2026-02-10",
+      "failure_rate": 15.384615384615385,
+      "anomaly_score": 3.2079337560467005
+    },
+    {
+      "date": "2026-02-11",
+      "failure_rate": 6.779661016949152,
+      "anomaly_score": 0.8611580971655611
+    },
+    {
+      "date": "2026-02-12",
+      "failure_rate": 20.833333333333336,
+      "anomaly_score": 2.3518467344104654
+    },
+    {
+      "date": "2026-02-13",
+      "failure_rate": 10,
+      "anomaly_score": 0.7911180684900317
+    },
+    {
+      "date": "2026-02-14",
+      "failure_rate": 8.51063829787234,
+      "anomaly_score": 0.6732919731830057
+    }
+  ],
+  "root_causes": [
+    {
+      "title": "Billing Deployment Regression",
+      "confidence": 89,
+      "evidence": "Correlated with billing-service deployment on Feb 7."
+    },
+    {
+      "title": "Pricing Version Mismatch",
+      "confidence": 72,
+      "evidence": "Statistially significant revenue delta post-Feb 7."
+    },
+    {
+      "title": "Transaction Failure Spikes",
+      "confidence": 44,
+      "evidence": "P0 anomalies detected in checkout retry logic."
+    }
+  ],
+  "financials": {
+    "immediate_loss": 1630,
+    "projected_30d_mrr": 6725.357142857143,
+    "ltv_impact": 20176.071428571428
+  },
+  "recommendations": [
+    {
+      "action": "Roll back billing-service deployment",
+      "priority": "CRITICAL",
+      "impact": "HIGH"
+    },
+    {
+      "action": "Fix pricing lookup logic",
+      "priority": "HIGH",
+      "impact": "MEDIUM"
+    },
+    {
+      "action": "Add pre-deployment revenue guardrails",
+      "priority": "MEDIUM",
+      "impact": "PREVENTIVE"
+    }
+  ]
+}

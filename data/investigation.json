@@ -1,0 +1,543 @@
+{
+  "metadata": {
+    "generatedAt": "2026-02-14T13:46:16.361Z",
+    "engine": "RevenueLeak AI v1.0",
+    "dataWindow": {
+      "start": "2026-02-01",
+      "end": "2026-02-14"
+    },
+    "datasetsLoaded": {
+      "subscriptions": 120,
+      "transactions": 750,
+      "invoices": 583,
+      "pricingVersions": 3,
+      "supportTickets": 94,
+      "churnEvents": 15,
+      "systemEvents": 39
+    }
+  },
+  "executiveSummary": {
+    "investigationDate": "2026-02-14",
+    "period": "2026-02-01 to 2026-02-14",
+    "verdict": "MODERATE CONFIDENCE — FURTHER INVESTIGATION NEEDED",
+    "compositeConfidence": 0.4939,
+    "keyFindings": [
+      "3 statistical anomalies detected across 3 metrics",
+      "Invoice underbilling distribution shift CONFIRMED (Welch t = -7.4504)",
+      "48 underbilled invoices totaling $1600.00",
+      "Transaction failure rate spiked post-deployment (1 anomalous days)",
+      "15 churn events with $2155.00 MRR lost, concentrated 2026-02-10, 2026-02-11, 2026-02-12, 2026-02-13",
+      "Causal chain statistically validated: deployment → failures → negative sentiment → churn"
+    ],
+    "totalIdentifiedLeak": 2438.79,
+    "projected30DayRisk": 9232.5
+  },
+  "dailyMetrics": [
+    {
+      "date": "2026-02-01",
+      "expectedMRR": 18270,
+      "billedRevenue": 6992,
+      "expectedRevenue": 6992,
+      "revenueDelta": 0,
+      "transactionTotal": 49,
+      "transactionFailed": 0,
+      "transactionFailureRate": 0,
+      "supportTickets": 5,
+      "avgSentiment": 0,
+      "negativeTickets": 0,
+      "churnedMRR": 0,
+      "churnedCount": 0
+    },
+    {
+      "date": "2026-02-02",
+      "expectedMRR": 18270,
+      "billedRevenue": 5746,
+      "expectedRevenue": 5746,
+      "revenueDelta": 0,
+      "transactionTotal": 47,
+      "transactionFailed": 0,
+      "transactionFailureRate": 0,
+      "supportTickets": 4,
+      "avgSentiment": 0.25,
+      "negativeTickets": 0,
+      "churnedMRR": 0,
+      "churnedCount": 0
+    },
+    {
+      "date": "2026-02-03",
+      "expectedMRR": 18270,
+      "billedRevenue": 8448,
+      "expectedRevenue": 8448,
+      "revenueDelta": 0,
+      "transactionTotal": 59,
+      "transactionFailed": 2,
+      "transactionFailureRate": 0.0339,
+      "supportTickets": 6,
+      "avgSentiment": 0.5,
+      "negativeTickets": 0,
+      "churnedMRR": 0,
+      "churnedCount": 0
+    },
+    {
+      "date": "2026-02-04",
+      "expectedMRR": 18270,
+      "billedRevenue": 3990,
+      "expectedRevenue": 3990,
+      "revenueDelta": 0,
+      "transactionTotal": 45,
+      "transactionFailed": 2,
+      "transactionFailureRate": 0.0444,
+      "supportTickets": 6,
+      "avgSentiment": 0.1667,
+      "negativeTickets": 1,
+      "churnedMRR": 0,
+      "churnedCount": 0
+    },
+    {
+      "date": "2026-02-05",
+      "expectedMRR": 18270,
+      "billedRevenue": 7693,
+      "expectedRevenue": 7693,
+      "revenueDelta": 0,
+      "transactionTotal": 49,
+      "transactionFailed": 0,
+      "transactionFailureRate": 0,
+      "supportTickets": 4,
+      "avgSentiment": 0,
+      "negativeTickets": 0,
+      "churnedMRR": 0,
+      "churnedCount": 0
+    },
+    {
+      "date": "2026-02-06",
+      "expectedMRR": 18270,
+      "billedRevenue": 5101,
+      "expectedRevenue": 5101,
+      "revenueDelta": 0,
+      "transactionTotal": 54,
+      "transactionFailed": 1,
+      "transactionFailureRate": 0.0185,
+      "supportTickets": 5,
+      "avgSentiment": 0.2,
+      "negativeTickets": 0,
+      "churnedMRR": 0,
+      "churnedCount": 0
+    },
+    {
+      "date": "2026-02-07",
+      "expectedMRR": 18270,
+      "billedRevenue": 6630,
+      "expectedRevenue": 6630,
+      "revenueDelta": 0,
+      "transactionTotal": 52,
+      "transactionFailed": 1,
+      "transactionFailureRate": 0.0192,
+      "supportTickets": 4,
+      "avgSentiment": 0.25,
+      "negativeTickets": 0,
+      "churnedMRR": 0,
+      "churnedCount": 0
+    },
+    {
+      "date": "2026-02-08",
+      "expectedMRR": 18270,
+      "billedRevenue": 5143,
+      "expectedRevenue": 5243,
+      "revenueDelta": 100,
+      "transactionTotal": 60,
+      "transactionFailed": 6,
+      "transactionFailureRate": 0.1,
+      "supportTickets": 13,
+      "avgSentiment": -0.8462,
+      "negativeTickets": 11,
+      "churnedMRR": 0,
+      "churnedCount": 0
+    },
+    {
+      "date": "2026-02-09",
+      "expectedMRR": 18270,
+      "billedRevenue": 7020,
+      "expectedRevenue": 7220,
+      "revenueDelta": 200,
+      "transactionTotal": 49,
+      "transactionFailed": 5,
+      "transactionFailureRate": 0.102,
+      "supportTickets": 10,
+      "avgSentiment": -0.7,
+      "negativeTickets": 7,
+      "churnedMRR": 0,
+      "churnedCount": 0
+    },
+    {
+      "date": "2026-02-10",
+      "expectedMRR": 18270,
+      "billedRevenue": 6726,
+      "expectedRevenue": 6876,
+      "revenueDelta": 150,
+      "transactionTotal": 52,
+      "transactionFailed": 8,
+      "transactionFailureRate": 0.1538,
+      "supportTickets": 9,
+      "avgSentiment": -0.2222,
+      "negativeTickets": 3,
+      "churnedMRR": 964,
+      "churnedCount": 6
+    },
+    {
+      "date": "2026-02-11",
+      "expectedMRR": 18270,
+      "billedRevenue": 4879,
+      "expectedRevenue": 5089,
+      "revenueDelta": 210,
+      "transactionTotal": 59,
+      "transactionFailed": 4,
+      "transactionFailureRate": 0.0678,
+      "supportTickets": 8,
+      "avgSentiment": -0.5,
+      "negativeTickets": 6,
+      "churnedMRR": 356,
+      "churnedCount": 4
+    },
+    {
+      "date": "2026-02-12",
+      "expectedMRR": 18270,
+      "billedRevenue": 7684,
+      "expectedRevenue": 8024,
+      "revenueDelta": 340,
+      "transactionTotal": 48,
+      "transactionFailed": 10,
+      "transactionFailureRate": 0.2083,
+      "supportTickets": 8,
+      "avgSentiment": -0.625,
+      "negativeTickets": 6,
+      "churnedMRR": 129,
+      "churnedCount": 1
+    },
+    {
+      "date": "2026-02-13",
+      "expectedMRR": 18270,
+      "billedRevenue": 4256,
+      "expectedRevenue": 4506,
+      "revenueDelta": 250,
+      "transactionTotal": 70,
+      "transactionFailed": 7,
+      "transactionFailureRate": 0.1,
+      "supportTickets": 8,
+      "avgSentiment": -0.625,
+      "negativeTickets": 6,
+      "churnedMRR": 706,
+      "churnedCount": 4
+    },
+    {
+      "date": "2026-02-14",
+      "expectedMRR": 18270,
+      "billedRevenue": 7219,
+      "expectedRevenue": 7569,
+      "revenueDelta": 350,
+      "transactionTotal": 47,
+      "transactionFailed": 4,
+      "transactionFailureRate": 0.0851,
+      "supportTickets": 4,
+      "avgSentiment": -0.5,
+      "negativeTickets": 3,
+      "churnedMRR": 0,
+      "churnedCount": 0
+    }
+  ],
+  "anomalies": {
+    "zScoreThreshold": 2,
+    "totalDetected": 3,
+    "byMetric": {
+      "TRANSACTION_FAILURE_RATE": [
+        {
+          "date": "2026-02-12",
+          "metric": "TRANSACTION_FAILURE_RATE",
+          "value": 0.2083,
+          "mean": 0.0666,
+          "stddev": 0.0626,
+          "zScore": 2.263,
+          "direction": "ABOVE_NORMAL"
+        }
+      ],
+      "NEGATIVE_TICKET_COUNT": [
+        {
+          "date": "2026-02-08",
+          "metric": "NEGATIVE_TICKET_COUNT",
+          "value": 11,
+          "mean": 3.0714,
+          "stddev": 3.5619,
+          "zScore": 2.226,
+          "direction": "ABOVE_NORMAL"
+        }
+      ],
+      "CHURNED_MRR": [
+        {
+          "date": "2026-02-10",
+          "metric": "CHURNED_MRR",
+          "value": 964,
+          "mean": 153.9286,
+          "stddev": 308.7684,
+          "zScore": 2.6236,
+          "direction": "ABOVE_NORMAL"
+        }
+      ]
+    },
+    "all": [
+      {
+        "date": "2026-02-12",
+        "metric": "TRANSACTION_FAILURE_RATE",
+        "value": 0.2083,
+        "mean": 0.0666,
+        "stddev": 0.0626,
+        "zScore": 2.263,
+        "direction": "ABOVE_NORMAL"
+      },
+      {
+        "date": "2026-02-08",
+        "metric": "NEGATIVE_TICKET_COUNT",
+        "value": 11,
+        "mean": 3.0714,
+        "stddev": 3.5619,
+        "zScore": 2.226,
+        "direction": "ABOVE_NORMAL"
+      },
+      {
+        "date": "2026-02-10",
+        "metric": "CHURNED_MRR",
+        "value": 964,
+        "mean": 153.9286,
+        "stddev": 308.7684,
+        "zScore": 2.6236,
+        "direction": "ABOVE_NORMAL"
+      }
+    ]
+  },
+  "underbillingAnalysis": {
+    "pivotDate": "2026-02-07",
+    "pivotSource": "billing-service deployment detected at 2026-02-07T03:22:00.000Z",
+    "invoicesBeforePivot": 250,
+    "invoicesAfterPivot": 333,
+    "meanPctDiffBefore": 0,
+    "meanPctDiffAfter": 3.2246,
+    "shiftMagnitude": 3.2246,
+    "welchTTest": {
+      "t": -7.4504,
+      "significant": true
+    },
+    "distributionShiftDetected": true,
+    "totalUnderbilledInvoices": 48,
+    "underbilledAfterPivot": 48,
+    "totalUnderbillingLoss": 1600,
+    "v2PricingFallbackCount": 48,
+    "affectedPlans": [
+      "Basic",
+      "Pro",
+      "Enterprise"
+    ]
+  },
+  "correlations": {
+    "systemEvents_to_revenueDelta": {
+      "description": "System event count → Revenue delta (underbilling)",
+      "lag": 0,
+      "r": -0.317,
+      "strength": "WEAK"
+    },
+    "failureRate_to_revenueDelta": {
+      "description": "Transaction failure rate → Revenue delta",
+      "lag": 2,
+      "r": 0.8436,
+      "strength": "STRONG"
+    },
+    "revenueDelta_to_sentimentDrop": {
+      "description": "Revenue delta (billing issues) → Negative sentiment",
+      "lag": 0,
+      "r": 0.625,
+      "strength": "MODERATE"
+    },
+    "failureRate_to_sentimentDrop": {
+      "description": "Transaction failure rate → Negative ticket spike",
+      "lag": 0,
+      "r": 0.6783,
+      "strength": "MODERATE"
+    },
+    "sentimentDrop_to_churn": {
+      "description": "Negative sentiment → Churn MRR loss",
+      "lag": 2,
+      "r": 0.8554,
+      "strength": "STRONG"
+    },
+    "failureRate_to_churn": {
+      "description": "Transaction failure rate → Churn MRR loss",
+      "lag": 1,
+      "r": 0.6794,
+      "strength": "MODERATE"
+    },
+    "deployment_to_failureRate": {
+      "description": "Deployment events → Transaction failure rate spike",
+      "lag": 0,
+      "r": -0.2181,
+      "strength": "WEAK"
+    }
+  },
+  "rootCauses": [
+    {
+      "id": "RC-001",
+      "title": "Billing Service Deployment — Pricing Lookup Regression",
+      "confidence": 0.4939,
+      "dimensionalScores": {
+        "revenueAnomaly": {
+          "weight": 0.35,
+          "score": 0
+        },
+        "invoiceUnderbill": {
+          "weight": 0.25,
+          "score": 1
+        },
+        "failureSpike": {
+          "weight": 0.2,
+          "score": 0.4526
+        },
+        "sentimentShift": {
+          "weight": 0.1,
+          "score": 0.6783
+        },
+        "churnCorrelation": {
+          "weight": 0.1,
+          "score": 0.8554
+        }
+      },
+      "causalChain": [
+        "billing-service deployment detected on 2026-02-07",
+        "Invoice underbilling distribution shift: mean % diff moved from 0.00% to 3.22% (Welch t = -7.4504)",
+        "48 invoices fell back to v2 pricing post-deployment",
+        "Transaction failure rate anomalies detected on 2026-02-12",
+        "Negative support tickets correlated with failure rate (r = 0.6783, lag = 0d)",
+        "Churn MRR correlated with negative sentiment (r = 0.8554, lag = 2d)"
+      ],
+      "evidence": {
+        "deploymentEvent": {
+          "id": "evt_3efd7d44-1",
+          "service": "billing-service",
+          "type": "DEPLOYMENT",
+          "timestamp": "2026-02-07T03:22:00.000Z",
+          "details": "billing-service v2.4.1 deployed to production — includes pricing engine refactor and retry logic updates",
+          "severity": "INFO",
+          "environment": "production"
+        },
+        "underbillingShift": {
+          "pivotDate": "2026-02-07",
+          "pivotSource": "billing-service deployment detected at 2026-02-07T03:22:00.000Z",
+          "invoicesBeforePivot": 250,
+          "invoicesAfterPivot": 333,
+          "meanPctDiffBefore": 0,
+          "meanPctDiffAfter": 3.2246,
+          "shiftMagnitude": 3.2246,
+          "welchTTest": {
+            "t": -7.4504,
+            "significant": true
+          },
+          "distributionShiftDetected": true,
+          "totalUnderbilledInvoices": 48,
+          "underbilledAfterPivot": 48,
+          "totalUnderbillingLoss": 1600,
+          "v2PricingFallbackCount": 48,
+          "affectedPlans": [
+            "Basic",
+            "Pro",
+            "Enterprise"
+          ]
+        },
+        "anomalyCount": 3,
+        "correlationChain": [
+          {
+            "description": "Deployment events → Transaction failure rate spike",
+            "lag": 0,
+            "r": -0.2181,
+            "strength": "WEAK"
+          },
+          {
+            "description": "Transaction failure rate → Negative ticket spike",
+            "lag": 0,
+            "r": 0.6783,
+            "strength": "MODERATE"
+          },
+          {
+            "description": "Negative sentiment → Churn MRR loss",
+            "lag": 2,
+            "r": 0.8554,
+            "strength": "STRONG"
+          }
+        ]
+      }
+    }
+  ],
+  "financialImpact": {
+    "immediate": {
+      "revenueDeltaOnAnomalousDays": 590,
+      "underbillingLoss": 1600,
+      "failedTransactionLoss": 248.79,
+      "totalImmediateLoss": 838.79
+    },
+    "churn": {
+      "customersChurned": 15,
+      "monthlyMRRLost": 2155,
+      "annualizedImpact": 25860,
+      "churnWithFailedTx": 14,
+      "churnWithNegTickets": 15
+    },
+    "projection": {
+      "avgDailyLoss": 200,
+      "formulaUsed": "(avgDailyLoss × 30) + (churnedMRR × 1.5)",
+      "projected30DayRisk": 9232.5,
+      "assumptions": [
+        "Daily underbilling rate continues at post-pivot average",
+        "Churn multiplier of 1.5× accounts for secondary churn from unresolved issues",
+        "No corrective action taken within the projection window"
+      ]
+    }
+  },
+  "recommendations": [
+    {
+      "priority": "P0",
+      "urgency": "IMMEDIATE",
+      "action": "Rollback or hotfix billing-service v2.4.1",
+      "rationale": "Deployment on 2026-02-07 is the statistically identified root cause with 49.4% confidence. Pricing lookup regression causes 48 invoices to use stale v2 pricing.",
+      "expectedImpact": "Eliminates daily underbilling of ~$200.00/day"
+    },
+    {
+      "priority": "P0",
+      "urgency": "IMMEDIATE",
+      "action": "Issue corrective invoices for all underbilled accounts",
+      "rationale": "48 invoices are underbilled by a total of $1600.00. All affected invoices used v2 pricing instead of active v3.",
+      "expectedImpact": "Recovers $1600.00 in underbilled revenue"
+    },
+    {
+      "priority": "P1",
+      "urgency": "WITHIN 24H",
+      "action": "Retry all failed transactions since deployment",
+      "rationale": "45 transactions failed post-deployment, many with RETRY_EXHAUSTED status suggesting retry logic regression.",
+      "expectedImpact": "Potential recovery of $248.79"
+    },
+    {
+      "priority": "P1",
+      "urgency": "WITHIN 24H",
+      "action": "Proactive outreach to at-risk customers",
+      "rationale": "Negative sentiment correlated with failure rate (r = 0.6783) and churn followed by 2 day(s). Intervention can interrupt the causal chain.",
+      "expectedImpact": "Reduces projected secondary churn wave"
+    },
+    {
+      "priority": "P2",
+      "urgency": "WITHIN 1 WEEK",
+      "action": "Add automated pricing integrity monitoring to billing pipeline",
+      "rationale": "The underbilling went undetected for 7 days. An automated check comparing invoice amounts against active pricing version would catch this immediately.",
+      "expectedImpact": "Prevents future silent underbilling"
+    },
+    {
+      "priority": "P2",
+      "urgency": "WITHIN 1 WEEK",
+      "action": "Add financial canary tests to billing-service CI/CD pipeline",
+      "rationale": "Deployment introduced both pricing regression and retry logic failure. Pre-production canary tests with pricing verification would have caught both issues.",
+      "expectedImpact": "Prevents billing regressions from reaching production"
+    }
+  ]
+}

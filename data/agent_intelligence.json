@@ -1,0 +1,61 @@
+{
+  "verdict": "Billing Deployment Regression confirmed as primary driver (Confidence: 57.99999999999999%)",
+  "confidence": 0.58,
+  "root_causes": [
+    {
+      "cause": "Billing Deployment Regression",
+      "confidence": 0.58,
+      "evidence": [
+        "Revenue drop within 24h of deployment",
+        "MRR risk increased to 1.8%",
+        "Transaction failure volatility detected"
+      ]
+    },
+    {
+      "cause": "Pricing Version Mismatch",
+      "confidence": 0.58,
+      "evidence": [
+        "Invoice calculation mismatch",
+        "Subscription tier drift"
+      ]
+    }
+  ],
+  "financial_impact": {
+    "immediate_loss": 1630,
+    "projected_30d_mrr": 6725.357142857143,
+    "ltv_impact": 20176.071428571428,
+    "churn_impact": {
+      "monthly_mrr_lost": 245,
+      "annualized_impact": 3912
+    }
+  },
+  "preventive_intelligence": {
+    "early_warning_indicators": [
+      "Failed transaction rate threshold > 5%",
+      "Daily revenue delta > 2% variance",
+      "Pricing version usage consistency < 99%"
+    ],
+    "guardrails": [
+      "Pre-deployment shadow billing verification",
+      "Automated revenue reconciliation (Hourly)",
+      "Rollback trigger on sentiment decay"
+    ],
+    "monitoring_focus": [
+      "Checkout-retry-logic success rates",
+      "Billed vs Expected MRR per SKU",
+      "Support ticke volume for 'Overcharge' keywords"
+    ]
+  },
+  "recommended_actions": [
+    {
+      "action": "Rollback billing-service v2.4.1",
+      "priority": "CRITICAL",
+      "expected_impact": "Immediate restoration of correct pricing logic"
+    },
+    {
+      "action": "Verify database migration integrity",
+      "priority": "HIGH",
+      "expected_impact": "Ensures no data loss during rollback"
+    }
+  ]
+}

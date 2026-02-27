@@ -1,0 +1,86 @@
+[
+  {
+    "date": "2026-02-01",
+    "underbilling_count": 0,
+    "is_post_deployment": false,
+    "is_deployment_day": true
+  },
+  {
+    "date": "2026-02-02",
+    "underbilling_count": 0,
+    "is_post_deployment": true,
+    "is_deployment_day": false
+  },
+  {
+    "date": "2026-02-03",
+    "underbilling_count": 0,
+    "is_post_deployment": true,
+    "is_deployment_day": false
+  },
+  {
+    "date": "2026-02-04",
+    "underbilling_count": 0,
+    "is_post_deployment": true,
+    "is_deployment_day": false
+  },
+  {
+    "date": "2026-02-05",
+    "underbilling_count": 0,
+    "is_post_deployment": true,
+    "is_deployment_day": false
+  },
+  {
+    "date": "2026-02-06",
+    "underbilling_count": 0,
+    "is_post_deployment": true,
+    "is_deployment_day": false
+  },
+  {
+    "date": "2026-02-07",
+    "underbilling_count": 0,
+    "is_post_deployment": true,
+    "is_deployment_day": false
+  },
+  {
+    "date": "2026-02-08",
+    "underbilling_count": 4,
+    "is_post_deployment": true,
+    "is_deployment_day": false
+  },
+  {
+    "date": "2026-02-09",
+    "underbilling_count": 2,
+    "is_post_deployment": true,
+    "is_deployment_day": false
+  },
+  {
+    "date": "2026-02-10",
+    "underbilling_count": 7,
+    "is_post_deployment": true,
+    "is_deployment_day": false
+  },
+  {
+    "date": "2026-02-11",
+    "underbilling_count": 3,
+    "is_post_deployment": true,
+    "is_deployment_day": false
+  },
+  {
+    "date": "2026-02-12",
+    "underbilling_count": 10,
+    "is_post_deployment": true,
+    "is_deployment_day": false
+  },
+  {
+    "date": "2026-02-13",
+    "underbilling_count": 8,
+    "is_post_deployment": true,
+    "is_deployment_day": false
+  },
+  {
+    "date": "2026-02-14",
+    "underbilling_count": 14,
+    "is_post_deployment": true,
+    "is_deployment_day": false
+  }
+]

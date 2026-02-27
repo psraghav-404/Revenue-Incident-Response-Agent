@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RevenueLeak AI | Executive Investigation</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <div class="dashboard-container">
+    <header class="fade-in">
+      <h1>RevenueLeak AI — Executive Investigation Report</h1>
+      <p>Autonomous Financial Intelligence | Data-Driven Causal Analysis</p>
+    </header>
+
+    <!-- ── A. Executive Summary ── -->
+    <section id="executive-summary" class="fade-in" style="animation-delay: 0.1s;">
+      <span class="section-label">Executive Intelligence</span>
+      <h2 class="section-title">Board-Level Verdict</h2>
+      <div class="summary-grid">
+        <div class="glass-card summary-card">
+          <span class="value critical" id="total-leak-val">$0</span>
+          <span class="label">Total Revenue Leaked</span>
+        </div>
+        <div class="glass-card summary-card">
+          <span class="value warning" id="mrr-risk-val">0%</span>
+          <span class="label">30-Day MRR at Risk</span>
+        </div>
+        <div class="glass-card summary-card">
+          <span class="value success" id="confidence-val">0%</span>
+          <span class="label">Detection Confidence</span>
+        </div>
+      </div>
+      <div class="glass-card verdict-box" id="verdict-text">
+        Analysis pending ingestion of Elasticsearch telemetry...
+      </div>
+    </section>
+
+    <!-- ── B. Key Performance Indicators ── -->
+    <section id="kpis" class="fade-in" style="animation-delay: 0.15s;">
+      <span class="section-label">KPI Surveillance</span>
+      <h2 class="section-title">Core Financial Metrics</h2>
+      <div class="summary-grid">
+        <div class="glass-card summary-card mini">
+          <span class="value small" id="expected-mrr-val">$0</span>
+          <span class="label">Expected Revenue</span>
+        </div>
+        <div class="glass-card summary-card mini">
+          <span class="value small success" id="billed-mrr-val">$0</span>
+          <span class="label">Billed Revenue</span>
+        </div>
+        <div class="glass-card summary-card mini">
+          <span class="value small critical" id="revenue-delta-val">$0</span>
+          <span class="label">Revenue Delta</span>
+        </div>
+        <div class="glass-card summary-card mini">
+          <span class="value small critical" id="churn-mrr-val">$0</span>
+          <span class="label">Churned MRR</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── C. Forensic Trend Analysis ── -->
+    <section id="forensic-trends" class="fade-in" style="animation-delay: 0.2s;">
+      <span class="section-label">Forensic Analysis</span>
+      <h2 class="section-title">The Silence: Identifying the Hidden Multi-Domain Dips</h2>
+      <div class="chart-layout-grid">
+        <div class="glass-card">
+          <h4 class="chart-tag">Expected vs Billed Revenue</h4>
+          <div class="chart-container">
+            <canvas id="revenueChart"></canvas>
+          </div>
+        </div>
+        <div class="glass-card">
+          <h4 class="chart-tag">Transaction Failure Rate (%)</h4>
+          <div class="chart-container">
+            <canvas id="failureChart"></canvas>
+          </div>
+        </div>
+        <div class="glass-card">
+          <h4 class="chart-tag">Support Ticket Sentiment</h4>
+          <div class="chart-container">
+            <canvas id="sentimentChart"></canvas>
+          </div>
+        </div>
+        <div class="glass-card">
+          <h4 class="chart-tag">Daily Revenue Delta</h4>
+          <div class="chart-container">
+            <canvas id="deltaChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── D. Detected Anomalies ── -->
+    <section id="detected-issues" class="fade-in" style="animation-delay: 0.3s;">
+      <span class="section-label">Detected Anomalies</span>
+      <h2 class="section-title">Multi-Dimensional Telemetry Outliers</h2>
+      <div class="glass-card" style="padding: 0; overflow: hidden;">
+        <table class="action-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Metric</th>
+              <th>Z-Score</th>
+              <th>Severity</th>
+              <th>Explanation</th>
+            </tr>
+          </thead>
+          <tbody id="anomalies-body">
+            <!-- Rows injected by app.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── E. Root Cause Analysis ── -->
+    <section id="root-cause" class="fade-in" style="animation-delay: 0.4s;">
+      <span class="section-label">Causal Correlation</span>
+      <h2 class="section-title">The Investigation: Pinpointing Causality (RCA)</h2>
+      <div class="glass-card" id="rca-container">
+        <div class="rca-hero">
+          <div class="rca-header-info">
+            <h3 id="causal-verdict-title">Billing Service Deployment — Pricing Lookup Regression</h3>
+            <span class="issue-tag">SYSTEM SOURCE</span>
+          </div>
+          <div class="causal-chain-list" id="causal-chain">
+            <!-- Items injected by app.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── F. Financial Impact & Risk Projection ── -->
+    <section id="financial-impact" class="fade-in" style="animation-delay: 0.5s;">
+      <span class="section-label">Impact Modeling</span>
+      <h2 class="section-title">Projection: The Cost of Inaction</h2>
+      <div class="impact-grid-container">
+        <div class="glass-card">
+          <h5>IMMEDIATE LOSSES</h5>
+          <ul class="impact-breakdown-list" id="immediate-loss-list"></ul>
+        </div>
+        <div class="glass-card">
+          <h5>CHURN IMPACT</h5>
+          <ul class="impact-breakdown-list" id="churn-impact-list"></ul>
+        </div>
+        <div class="glass-card">
+          <h5>30-DAY RISK</h5>
+          <ul class="impact-breakdown-list" id="projection-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── G. Recommended Actions ── -->
+    <section id="recommendations" class="fade-in" style="animation-delay: 0.6s;">
+      <span class="section-label">Intelligence Output</span>
+      <h2 class="section-title">Prescribed Recovery Actions</h2>
+      <div class="recommendations-stack" id="actions-stack">
+        <!-- Cards injected by app.js -->
+      </div>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

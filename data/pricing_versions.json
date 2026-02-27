@@ -1,0 +1,56 @@
+[
+  {
+    "version": "v1",
+    "effectiveDate": "2025-06-01T00:00:00Z",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": 29
+      },
+      {
+        "name": "Pro",
+        "price": 79
+      },
+      {
+        "name": "Enterprise",
+        "price": 249
+      }
+    ]
+  },
+  {
+    "version": "v2",
+    "effectiveDate": "2025-11-15T00:00:00Z",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": 39
+      },
+      {
+        "name": "Pro",
+        "price": 99
+      },
+      {
+        "name": "Enterprise",
+        "price": 299
+      }
+    ]
+  },
+  {
+    "version": "v3",
+    "effectiveDate": "2026-02-05T00:00:00Z",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": 49
+      },
+      {
+        "name": "Pro",
+        "price": 129
+      },
+      {
+        "name": "Enterprise",
+        "price": 399
+      }
+    ]
+  }
+]
