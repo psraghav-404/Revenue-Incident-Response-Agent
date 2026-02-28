@@ -749,15 +749,33 @@ function App() {
     </div >
   );
 
+  function extractServiceFromQuery(text) {
+    const lower = text.toLowerCase();
+    const serviceKeywords = {
+      'billing-service': ['billing', 'bill', 'payment', 'pay', 'invoice', 'invoicing', 'pricing'],
+      'subscription-service': ['subscription', 'subscribe', 'sub', 'plan', 'renewal', 'recurring'],
+      'tax-service': ['tax', 'taxes', 'taxation', 'vat', 'gst'],
+    };
+    for (const [service, keywords] of Object.entries(serviceKeywords)) {
+      if (keywords.some(kw => lower.includes(kw))) return service;
+    }
+    // If dropdown has a specific service selected, use that
+    if (selectedService !== 'all') return selectedService;
+    return null; // No service detected
+  }
+
   async function handleSendMessage(text) {
     setMessages(prev => [...prev, { role: 'user', content: text }]);
     setIsThinking(true);
 
     try {
+      const detectedService = extractServiceFromQuery(text);
+      const service = detectedService || 'billing-service';
+
       const response = await fetch(`${API_BASE}/agent/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ service: selectedService !== 'all' ? selectedService : 'billing-service' })
+        body: JSON.stringify({ service, query: text })
       });
       const report = await response.json();
 

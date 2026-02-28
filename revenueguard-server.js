@@ -1043,6 +1043,7 @@ app.post('/api/agent/analyze', async (req, res) => {
         }
 
         const service = req.body.service || 'billing-service';
+        const userQuery = req.body.query || '';
         const invoices = getInvoices();
         const events = getEvents();
         const transactions = getTransactions();
@@ -1090,6 +1091,7 @@ app.post('/api/agent/analyze', async (req, res) => {
             metadata: {
                 id: `AGENT-ANALYTIC-${Date.now()}`,
                 service,
+                query: userQuery,
                 timestamp: new Date().toISOString(),
                 role: "Revenue Incident Response Agent"
             },
@@ -1116,8 +1118,8 @@ app.post('/api/agent/analyze', async (req, res) => {
                 delta: Object.entries(t.evidence).map(([k, v]) => `${k}: ${v}`).join(', ')
             })),
             executive_summary: culprit?.confidence > 0.5
-                ? `Autonomous investigation confirmed a ${culprit.classification} between the ${culprit.version} deployment and the revenue leak initiated on ${culprit.spikeStart}. Detected ${failedTransactions} correlated transaction failures and a ${churnCount}-event churn spike.`
-                : `Multi-signal analysis indicates statistical drift factor of ${drift.driftFactor}x, but no primary deployment culprit identified with high confidence. Recommendations: Audit secondary service dependencies.`,
+                ? `[${service}] Autonomous investigation confirmed a ${culprit.classification} between the ${culprit.version} deployment and the revenue leak initiated on ${culprit.spikeStart}. Observed $${totalLoss.toFixed(2)} in losses with ${failedTransactions} correlated transaction failures and a ${churnCount}-event churn spike. Drift factor: ${drift.driftFactor}x.`
+                : `[${service}] Multi-signal analysis indicates statistical drift factor of ${drift.driftFactor}x with $${totalLoss.toFixed(2)} in observed losses. No primary deployment culprit identified with high confidence. ${failedTransactions} failed transactions and ${churnCount} churn events detected. Recommendations: Audit secondary service dependencies.`,
             recommended_actions: decision.recommended_actions,
             confidence_score: decision.confidence
         };
@@ -1131,6 +1133,7 @@ app.post('/api/agent/analyze', async (req, res) => {
             timestamp: new Date().toISOString(),
             action: 'AGENT_ANALYZE',
             tool: 'Orchestrator',
+            query: userQuery,
             reasoning: report.executive_summary,
             output: report
         });
@@ -1140,6 +1143,7 @@ app.post('/api/agent/analyze', async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+
 
 // ── 13. System Modes & Audit Proof ────────────────────────────────────────
 
