@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RevenueGuard — Architecture Overview</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0e1a;
+            color: #c8d0e0;
+            padding: 40px 50px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #6366f1, #06d6a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            color: #5a6478;
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #8b5cf6;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 24px 0 12px;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            padding-bottom: 6px;
+        }
+
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: 16px 0;
+        }
+
+        .flow-step {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 12px 16px;
+            text-align: center;
+            min-width: 130px;
+        }
+
+        .flow-step .num {
+            font-size: 10px;
+            font-weight: 700;
+            color: #6366f1;
+            margin-bottom: 4px;
+        }
+
+        .flow-step .name {
+            font-size: 13px;
+            font-weight: 700;
+            color: #e2e8f0;
+        }
+
+        .flow-step .desc {
+            font-size: 10px;
+            color: #5a6478;
+            margin-top: 2px;
+        }
+
+        .arrow {
+            font-size: 18px;
+            color: #6366f1;
+            padding: 0 6px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin: 12px 0;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 14px;
+        }
+
+        .card h3 {
+            font-size: 12px;
+            font-weight: 700;
+            color: #06d6a0;
+            margin-bottom: 6px;
+        }
+
+        .card p,
+        .card li {
+            font-size: 11px;
+            line-height: 1.6;
+            color: #8892a8;
+        }
+
+        .card ul {
+            padding-left: 14px;
+        }
+
+        .tech-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+
+        .tech-tag {
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            color: #a5b4fc;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .formula-box {
+            background: rgba(139, 92, 246, 0.08);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #c4b5fd;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .endpoints {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 20px;
+            margin: 8px 0;
+        }
+
+        .endpoint {
+            font-size: 11px;
+            font-family: 'Courier New', monospace;
+            color: #06d6a0;
+            padding: 2px 0;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 10px;
+            color: #3a4258;
+            margin-top: 28px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media print {
+            body {
+                background: #0a0e1a;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🛡️ Revenue Incident Response Agent</h1>
+    <div class="subtitle">Elastic Agent Builder Hackathon 2026 — Architecture Overview</div>
+
+    <h2>Agent Pipeline (6-Step Autonomous Investigation)</h2>
+    <div class="flow">
+        <div class="flow-step">
+            <div class="num">STEP 1</div>
+            <div class="name">Detect</div>
+            <div class="desc">ES|QL Anomaly Scan</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="flow-step">
+            <div class="num">STEP 2</div>
+            <div class="name">Investigate</div>
+            <div class="desc">Deployment History</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="flow-step">
+            <div class="num">STEP 3</div>
+            <div class="name">Correlate</div>
+            <div class="desc">Multi-Signal Fusion</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="flow-step">
+            <div class="num">STEP 4</div>
+            <div class="name">Quantify</div>
+            <div class="desc">Financial Impact</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="flow-step">
+            <div class="num">STEP 5</div>
+            <div class="name">Decide</div>
+            <div class="desc">Autonomous Verdict</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="flow-step">
+            <div class="num">STEP 6</div>
+            <div class="name">Explain</div>
+            <div class="desc">NL Reasoning Trace</div>
+        </div>
+    </div>
+
+    <h2>Intelligence Engines</h2>
+    <div class="grid-3">
+        <div class="card">
+            <h3>Statistical Drift Detection</h3>
+            <p>Z-score analysis comparing baseline vs current anomaly rates. Values exceeding z &gt; 3.0 trigger
+                investigation.</p>
+        </div>
+        <div class="card">
+            <h3>Confidence Scoring</h3>
+            <div class="formula-box">C = S×0.4 + T×0.3 + D×0.2 + H×0.1</div>
+            <p>Weighted formula: Signal strength, Temporal alignment, Cross-signal validation, Historical deviation.</p>
+        </div>
+        <div class="card">
+            <h3>Deployment Recency</h3>
+            <p>Exponential decay model correlating recent deployments with anomaly onset timing for causal inference.
+            </p>
+        </div>
+    </div>
+
+    <h2>Tech Stack</h2>
+    <div class="tech-row">
+        <span class="tech-tag">Elasticsearch 8.x</span>
+        <span class="tech-tag">Node.js</span>
+        <span class="tech-tag">Express.js</span>
+        <span class="tech-tag">React 19</span>
+        <span class="tech-tag">Vite</span>
+        <span class="tech-tag">Chart.js</span>
+        <span class="tech-tag">Lucide Icons</span>
+        <span class="tech-tag">REST API</span>
+    </div>
+
+    <h2>API Endpoints (10 Intelligence Routes)</h2>
+    <div class="endpoints">
+        <div class="endpoint">GET /api/health</div>
+        <div class="endpoint">GET /api/anomalies</div>
+        <div class="endpoint">GET /api/deployment-impact</div>
+        <div class="endpoint">GET /api/risk-score</div>
+        <div class="endpoint">GET /api/financial-loss</div>
+        <div class="endpoint">GET /api/business-impact</div>
+        <div class="endpoint">GET /api/timeline</div>
+        <div class="endpoint">GET /api/services</div>
+        <div class="endpoint">GET /api/alerts</div>
+        <div class="endpoint">GET /api/explainability</div>
+    </div>
+
+    <h2>Data Architecture</h2>
+    <div class="grid-3">
+        <div class="card">
+            <h3>Data Sources</h3>
+            <ul>
+                <li>invoices (2,400+ records)</li>
+                <li>system_events (deployments)</li>
+                <li>transactions (payments)</li>
+                <li>churn_events (retention)</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Dual-Mode Operation</h3>
+            <ul>
+                <li><b>Live Mode:</b> Elasticsearch queries</li>
+                <li><b>Fallback:</b> JSON file analysis</li>
+                <li>Transparent mode switching</li>
+                <li>Zero data loss guarantee</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Output</h3>
+            <ul>
+                <li>Executive dashboard (React)</li>
+                <li>Autonomous AI chat analyst</li>
+                <li>Forensic reasoning trace</li>
+                <li>Verifiable confidence scores</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        RevenueGuard — Detect risk before it becomes loss. | GitHub:
+        github.com/psraghav-404/Revenue-Incident-Response-Agent
+    </div>
+
+</body>
+
+</html>

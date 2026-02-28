@@ -38,6 +38,11 @@ const DATA_DIR = path.join(__dirname, 'data');
 app.use(cors());
 app.use(express.json());
 
+// Root health check to prevent Render cold starts
+app.get("/", (req, res) => {
+    res.status(200).send("RevenueGuard API Awake");
+});
+
 // Serve React dashboard build
 const dashboardDist = path.join(__dirname, 'dashboard-react', 'dist');
 if (fs.existsSync(dashboardDist)) {
